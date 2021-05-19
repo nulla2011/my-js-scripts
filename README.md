@@ -8,7 +8,8 @@ my-js-scripts
  │   └── server.js     :一键在本地开启服务器
  └── userscript
 ​     ├── remove-like-button.user.js     :移除点赞
-​     └── show-av.user.js      :在b站播放页面显示原先的av号
+​     ├── show-av.user.js      :在b站播放页面显示原先的av号
+​     └── open-advance-search.user.js       :在推特用户页面一键开启高级搜索
 
 ```
 
