@@ -21,8 +21,9 @@
         if (!headerPhotoLink) {
             return;
         }
+        let uid = pathName.split('/')[1];
         searchLink = document.createElement('a');
-        searchLink.href = "/search-advanced?said=" + pathName.substring(1);
+        searchLink.href = "/search-advanced?said=" + uid;
         searchLink.textContent = "Search tweets";
         searchLink.id = "search_in_advance";
         searchLink.target = "_blank";
