@@ -9,7 +9,7 @@ my-js-scripts
  └── userscript
 ​     ├── remove-like-button.user.js     :移除点赞
 ​     ├── show-av.user.js      :在b站播放页面显示原先的av号
-​     └── open-advance-search.user.js       :在推特用户页面一键开启高级搜索
+​     ├── open-advance-search.user.js       :在推特用户页面一键开启高级搜索
+     └── anisoninfo-enhance.user.js        :改进 anison.info
 
 ```
-
