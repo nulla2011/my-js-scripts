@@ -23,8 +23,8 @@
       }
     }
   }
-  let mainTable = document.querySelector('table.sorted');
-  changeLinks(mainTable);
+  let mainTable = document.querySelectorAll('table.sorted');
+  changeLinks(mainTable[mainTable.length - 1]);
   let infoTable = document.querySelector('table.list');
   changeLinks(infoTable);
 })();
