@@ -24,7 +24,15 @@
     }
   }
   let mainTable = document.querySelectorAll('table.sorted');
-  changeLinks(mainTable[mainTable.length - 1]);
-  let infoTable = document.querySelector('table.list');
-  changeLinks(infoTable);
+  for (let t of mainTable) {
+    if (t.tHead) {
+      changeLinks(t);
+    }
+  }
+  let infoTable = document.querySelectorAll('table.list');
+  for (let t of infoTable) {
+    if (t.tHead) {
+      changeLinks(t);
+    }
+  }
 })();
