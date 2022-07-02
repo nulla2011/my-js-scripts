@@ -165,6 +165,6 @@
     cover.after(copyText);
     copyText.select();
     document.execCommand('copy');
-    document.body.removeChild(copyText);
+    copytext.remove();
   }
 })();
