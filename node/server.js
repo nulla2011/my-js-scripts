@@ -12,7 +12,8 @@ const mime={
 	"csv":"text/csv; charset=utf-8",
 	"woff2":"font/woff2",
 	"svg":"image/svg+xml",
-	"webp":"image/webp"
+	"webp":"image/webp",
+	"js":"application/javascript; charset=utf-8"
 }
 
 const httpServer=http.createServer((req,res)=>{
@@ -25,7 +26,7 @@ const processRequest=(request,response)=>{
 	let pathName=url.parse(request.url).pathname;
 	pathName=decodeURI(pathName);
 	//console.log(pathName);
-	let filePath=path.resolve(__dirname+pathName);
+	let filePath=path.resolve((process.argv[2]??__dirname)+pathName);
 	let ext=path.extname(pathName).slice(1);
 	//console.log(ext);
 	if(mime[ext]) headers['Content-Type']=mime[ext];
