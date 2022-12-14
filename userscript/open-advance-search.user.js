@@ -14,11 +14,11 @@
     let checkUserPage = () => {
         let pathName = location.pathname;
         let uid = pathName.split('/')[1];
-        let mainCloumn = document.querySelector('[data-testid="primaryColumn"]');
-        if (!mainCloumn) {
+        let mainColumn = document.querySelector('[data-testid="primaryColumn"]');
+        if (!mainColumn) {
             return;
         }
-        let buttonBlank = mainCloumn.firstChild.firstChild.firstChild.firstChild.firstChild.firstChild.firstChild.firstChild.children[2];
+        let buttonBlank = mainColumn.firstChild.firstChild.firstChild.firstChild.firstChild.firstChild.firstChild.firstChild.children[2];
         if (!buttonBlank) {
             return;
         }
@@ -28,12 +28,12 @@
             window.open("/search-advanced");
         }
         searchButton.style = "cursor: pointer; border: none; height: 100%; width: 100%; background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4Igp3aWR0aD0iNjAiIGhlaWdodD0iNjAiCnZpZXdCb3g9IjAgMCAzMCAzMCIKc3R5bGU9IiBmaWxsOiMzMDMwMzA7Ij48cGF0aCBkPSJNIDEzIDMgQyA3LjQ4ODk5NzEgMyAzIDcuNDg4OTk3MSAzIDEzIEMgMyAxOC41MTEwMDMgNy40ODg5OTcxIDIzIDEzIDIzIEMgMTUuMzk2NTA4IDIzIDE3LjU5NzM4NSAyMi4xNDg5ODYgMTkuMzIyMjY2IDIwLjczNjMyOCBMIDI1LjI5Mjk2OSAyNi43MDcwMzEgQSAxLjAwMDEgMS4wMDAxIDAgMSAwIDI2LjcwNzAzMSAyNS4yOTI5NjkgTCAyMC43MzYzMjggMTkuMzIyMjY2IEMgMjIuMTQ4OTg2IDE3LjU5NzM4NSAyMyAxNS4zOTY1MDggMjMgMTMgQyAyMyA3LjQ4ODk5NzEgMTguNTExMDAzIDMgMTMgMyB6IE0gMTMgNSBDIDE3LjQzMDEyMyA1IDIxIDguNTY5ODc3NCAyMSAxMyBDIDIxIDE3LjQzMDEyMyAxNy40MzAxMjMgMjEgMTMgMjEgQyA4LjU2OTg3NzQgMjEgNSAxNy40MzAxMjMgNSAxMyBDIDUgOC41Njk4Nzc0IDguNTY5ODc3NCA1IDEzIDUgeiI+PC9wYXRoPjwvc3ZnPg==') 50% 50% no-repeat; background-size: 58%;";
+        let bt = buttonBlank.querySelector("button");
         if (!buttonBlank.querySelector("div")) {
-            if (!buttonBlank.querySelector("button")) {
+            if (!bt) {
                 buttonBlank.appendChild(searchButton);
             }
         } else {
-            let bt = buttonBlank.querySelector("button");
             if (bt) {
                 buttonBlank.removeChild(bt);
             }
