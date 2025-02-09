@@ -9,7 +9,9 @@ const main = () => {
     let rangeFile = '';
     for (const address of list) {
       let cidr;
-      if (!IPCIDR.isValidCIDR(address)) {
+      if (IPCIDR.isValidCIDR(address)) {
+        cidr = new IPCIDR(address);
+      } else {
         if (isIP(address)) {
           if (isIPv4(address)) {
             cidr = new IPCIDR(address + '/32');
@@ -18,8 +20,6 @@ const main = () => {
             cidr = new IPCIDR(address + '/128');
           }
         }
-      } else {
-        cidr = new IPCIDR(address);
       }
       const [start, end] = cidr.toRange();
       rangeFile += `${start}-${end}\n`;
